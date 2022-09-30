@@ -1,0 +1,86 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   text-align: center;
+   background-color: #263f73;
+   color: #548aff;
+}
+
+h1 {
+   margin: 4rem;
+}
+
+.tabuleiro {
+   max-width: 43.75rem;
+   margin: auto;
+   display: grid;
+   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+   grid-gap: 20px;
+}
+
+.card{
+   width: 150px;
+   height: 150px;
+   position: relative;
+   transform-style: preserve-3d;
+   transition: transform .5s;
+   border-radius: 20px;
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, .45);
+}
+
+.flip {
+   transform: rotateY(180deg);
+}
+
+.front, .back {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   border-radius: 20px;
+   backface-visibility: hidden;
+}
+
+.front {
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   transform: rotateY(180deg);
+}
+.back {
+   width: 100%;
+   height: 100%;
+   color: #506080;
+   font-size: 32px;
+   background-color: #a1bfff;
+}
+
+#gameOver {
+   width: 100vw;
+   height: 100%;
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 0;
+   background-color: rgba(80, 96, 128, .5);
+}
+
+#gameOver div {
+   font-size: 2rem;
+}
+
+#playAgain {
+   width: 200px;
+   height: 50px;
+   color: #548aff;
+   margin: 30px;
+   border: none;
+   border-radius: 10px;
+   background-color: #436ecc;
+}
